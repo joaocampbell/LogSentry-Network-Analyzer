@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "logsentry-network-analyzer"
+version = "3.1.3"
+description = "Cross-platform local network diagnostics and security triage for Linux and Windows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE.txt" }
+authors = [{ name = "LogSentry Network Analyzer contributors" }]
+dependencies = ["psutil>=5.9.0"]
+
+[project.scripts]
+logsentry-net = "netanalyzer.cli:main"
+logsentry-gui = "netanalyzer.gui:main"
+
+[tool.setuptools.packages.find]
+include = ["netanalyzer*"]
