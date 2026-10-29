@@ -1,0 +1,12 @@
+LogSentry Network Analyzer 3.1.3 — validação de desenvolvimento
+
+Executado neste ambiente Linux de desenvolvimento em 2026-10-29.
+- python -m compileall -q netanalyzer tests: aprovado
+- python -m unittest discover -s tests -v: 56 testes aprovados
+- python -m netanalyzer --version: mostra 3.1.3
+- smoke test da CLI com --endpoint-audit e perfil public: gerou JSON e HTML válidos.
+- O relatório de smoke test assinalou explicitamente `unavailable_or_permission_limited` para atribuição de processo quando os PIDs não estavam visíveis no ambiente. A aplicação não interpreta isso como ausência de processos.
+- Testes adicionados para comparar `ss` normal e `sudo -n`, correspondência por endereço/protocolo/porta e estado explícito da atribuição.
+- Teste de recolha Windows continua simulado; validação real em Windows 10/11 permanece pendente.
+- Verificação manual da interface gráfica e da impressão PDF em Linux/Windows permanece pendente.
+- O ambiente de desenvolvimento não permite afirmar que a atribuição privilegiada funciona em todos os sistemas; confirmar no Linux Mint do utilizador com `sudo -v` e gerar novo relatório.
